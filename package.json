@@ -1,0 +1,12 @@
+{
+  "name": "turdom-currency",
+  "version": "0.0.1",
+  "description": "currency exchange rate",
+  "main": "server.js",
+  "author": "kiote",
+  "dependencies": {
+    "mongodb": "^2.2.11",
+    "mongoose": "^4.7.3",
+    "mongoose-double": "0.0.1"
+  }
+}
