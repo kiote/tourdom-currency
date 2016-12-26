@@ -9,7 +9,7 @@ var opts = {
 
 // clear previously scrapped tours
 Rate.remove({}, function(err, removed){
-  console.log(removed);
+  console.log('removed');
 });
 
 // parse
@@ -17,9 +17,20 @@ var datasource = 'https://openexchangerates.org/api/latest.json?app_id=' + proce
 request(datasource, function (err, result, body) {
   if (!err && result.statusCode == 200) {
     var rates = JSON.parse(body);
-    new Rate({'base': 'USD',
+    var eur = rates['rates']['EUR'];
+    var rub = rates['rates']['RUB'];
+    new Rate({'base': 'usd',
               'usd': 1,
-              'eur': rates['rates']['EUR'],
-              'rub': rates['rates']['RUB']}).save();
+              'eur': eur,
+              'rub': rub}).save();
+    new Rate({'base': 'rub',
+              'rub': 1,
+              'usd': 1/rub,
+              'eur': eur/rub}).save();
+    new Rate({'base': 'eur',
+              'eur': 1,
+              'usd': 1/eur,
+              'rub': rub/eur}).save();
+    console.log(rub);
   }
 })
