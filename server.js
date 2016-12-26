@@ -6,7 +6,7 @@ app.get('/', function (req, res) {
   Rate.find({}, function(err, rates){
     if(err) return res.send(500);
     res.set('Content-Type', 'application/json');
-    var tours = rates.map(function(a){
+    var rates = rates.map(function(a){
       return {
         base: a.base,
         usd: a.usd,
