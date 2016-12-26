@@ -5,16 +5,39 @@ mongoose.connect(mongoUri);
 
 var SchemaTypes = mongoose.Schema.Types;
 var rateSchema = mongoose.Schema({
-  base: String,
   usd: {
-    type: SchemaTypes.Double
+    rub: {
+      type: SchemaTypes.Double
+    },
+    eur: {
+      type: SchemaTypes.Double
+    },
+    usd: {
+      type: SchemaTypes.Double
+    }
   },
   rub: {
-    type: SchemaTypes.Double
+    rub: {
+      type: SchemaTypes.Double
+    },
+    eur: {
+      type: SchemaTypes.Double
+    },
+    usd: {
+      type: SchemaTypes.Double
+    }
   },
   eur: {
-    type: SchemaTypes.Double
-  }
+    rub: {
+      type: SchemaTypes.Double
+    },
+    eur: {
+      type: SchemaTypes.Double
+    },
+    usd: {
+      type: SchemaTypes.Double
+    }
+  },
 });
 
 var Rate = mongoose.model('Rate', rateSchema);
