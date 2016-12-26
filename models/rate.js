@@ -11,15 +11,9 @@ var rateSchema = mongoose.Schema({
     },
     eur: {
       type: SchemaTypes.Double
-    },
-    usd: {
-      type: SchemaTypes.Double
     }
   },
   rub: {
-    rub: {
-      type: SchemaTypes.Double
-    },
     eur: {
       type: SchemaTypes.Double
     },
@@ -29,9 +23,6 @@ var rateSchema = mongoose.Schema({
   },
   eur: {
     rub: {
-      type: SchemaTypes.Double
-    },
-    eur: {
       type: SchemaTypes.Double
     },
     usd: {

@@ -8,13 +8,12 @@ app.get('/', function (req, res) {
     res.set('Content-Type', 'application/json');
     var rates = rates.map(function(a){
       return {
-        base: a.base,
         usd: a.usd,
         eur: a.eur,
         rub: a.rub
       }
     });
-    res.json({'rates': rates})
+    res.json({'rates': rates[0]})
   })
 });
 
